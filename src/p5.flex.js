@@ -254,5 +254,5 @@
 		p5.prototype.SCALE_DOWN = "scale_down"
 	}
 
-	if (typeof p5 !== "undefined") mountFlex(p5)
+	if (globalThis?.createCanvas) mountFlex(globalThis)
 })()

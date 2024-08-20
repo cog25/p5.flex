@@ -224,34 +224,34 @@
 
 	// mount p5.flex to p5
 	window.mountFlex = (p5) => {
-		p5.prototype.flex = function (options = {}) {
+		p5.flex = function (options = {}) {
 			p5flex(this._renderer, options)
 		}
-		p5.prototype.getCanvas = function () {
+		p5.getCanvas = function () {
 			return this._renderer.elt
 		}
-		p5.prototype.getContainer = function () {
+		p5.getContainer = function () {
 			return this.getCanvas().container
 		}
-		p5.prototype.getParent = function () {
+		p5.getParent = function () {
 			return this.getContainer().parentNode
 		}
-		p5.prototype.containerBg = function (style) {
+		p5.containerBg = function (style) {
 			this.getContainer().style.background = style
 		}
-		p5.prototype.containerBgColor = function (...args) {
+		p5.containerBgColor = function (...args) {
 			const color = this._renderer._pInst.color(...args)
 			this.getContainer().style.background = color.toString()
 		}
-		p5.prototype.parentBg = function (style) {
+		p5.parentBg = function (style) {
 			this.getParent().style.background = style
 		}
-		p5.prototype.parentBgColor = function (...args) {
+		p5.parentBgColor = function (...args) {
 			const color = this._renderer._pInst.color(...args)
 			this.getParent().style.background = color.toString()
 		}
-		p5.prototype.NONE = "none"
-		p5.prototype.SCALE_DOWN = "scale_down"
+		p5.NONE = "none"
+		p5.SCALE_DOWN = "scale_down"
 	}
 
 	if (globalThis?.createCanvas) mountFlex(globalThis)
